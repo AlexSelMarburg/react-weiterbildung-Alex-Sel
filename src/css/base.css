@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: var(--giant-font-size);
+}
+
+h2 {
+  font-size: var(--huge-font-size);
+}
+
+h3 {
+  font-size: var(--large-font-size);
+}
+
+h4 {
+  font-size: var(--big-font-size);
+}
+
+h5 {
+  font-size: var(--normal-font-size);
+}
+
+h6 {
+  font-size: var(--small-font-size);
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}

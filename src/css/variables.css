@@ -1,0 +1,48 @@
+:root {
+  --navbar-height: 76px;
+  --footer-height: 80px;
+  --page-height: 100vh;
+  --max-page-width: 1480px;
+
+  /* FONTS */
+  --heading-font: "Cormorant Garamond", serif;
+  --body-font: "Proza Libre", sans-serif;
+
+  --giant-font-size: 5rem;
+  --huge-font-size: 3.5rem;
+  --large-font-size: 1.5rem;
+  --big-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /* COLORS */
+  --body-bg-color: #191714;
+  --main-bg-color: #000000;
+  --secondary-bg-color: #1d1d1d;
+
+  --accent-color-1: #b9654b;
+  --accent-color-2: #e65757;
+  --accent-color-3: #fd6c03;
+
+  --main-text-color: #fff;
+  --accent-text-color-1: #fadec6;
+  --accent-text-color-2: #f5b70c;
+
+  --call-to-action-bg-color: #d51f5a;
+  --call-to-action-bg-hover-color: #ffd032;
+  --call-to-action-active-color: #f5b70c;
+  --call-to-action-text-color: #000;
+}
+
+@media screen and (max-width: 740px) {
+  :root {
+    --giant-font-size: 3.5rem;
+    --huge-font-size: 2.5rem;
+    --large-font-size: 1.25rem;
+    --big-font-size: 1rem;
+    --normal-font-size: 0.875rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,9 @@
+#home-page {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    132deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(48, 47, 42, 1) 40%,
+    rgba(140, 126, 85, 1) 100%
+  );
+}

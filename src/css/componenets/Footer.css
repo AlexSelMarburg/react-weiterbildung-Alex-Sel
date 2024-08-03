@@ -1,0 +1,25 @@
+footer.footer {
+  height: var(--footer-height);
+  background-color: var(--secondary-bg-color);
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  span {
+    font-size: var(--big-font-size);
+    color: var(--main-text-color);
+    letter-spacing: 1px;
+  }
+
+  .footer-icon {
+    color: var(--main-text-color);
+    font-size: 2rem;
+  }
+
+  .footer-icon:hover {
+    color: var(--call-to-action-bg-hover-color);
+  }
+}
