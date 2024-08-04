@@ -2,7 +2,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 25px;
+  padding: 0;
+  padding-left: 25px;
   height: var(--navbar-height);
   position: fixed;
   top: 0;
@@ -23,7 +24,10 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
+    padding: 0 25px;
+    background-color: var(--main-bg-color);
+    height: 100%;
 
     li {
       list-style: none;
@@ -32,13 +36,12 @@ nav {
       a {
         text-decoration: none;
         font-size: 1.2rem;
-        font-weight: 600;
+        font-weight: 400;
         color: var(--accent-text-color-light-grey);
         place-items: center;
         transition: 0.3s ease;
         font-family: var(--body-font);
         text-transform: uppercase;
-        font-weight: 400;
         letter-spacing: 1px;
 
         &.active {

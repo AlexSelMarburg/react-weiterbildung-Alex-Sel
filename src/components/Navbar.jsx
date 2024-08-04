@@ -37,37 +37,36 @@ export function Navbar() {
       <Link href="/" id="navbar-logo" onClick={closeNavigation}>
         <SiApplemusic />
       </Link>
-      <div>
-        <ul className={isNavigationOpen ? "active" : ""}>
-          <li>
-            <Link
-              href="/"
-              className={(active) => (active ? "active" : "")}
-              onClick={closeNavigation}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/music"
-              className={(active) => (active ? "active" : "")}
-              onClick={closeNavigation}
-            >
-              Music
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/movies"
-              onClick={closeNavigation}
-              className={(active) => (active ? "active" : "")}
-            >
-              Movies
-            </Link>
-          </li>
-        </ul>
-      </div>
+
+      <ul className={isNavigationOpen ? "active" : ""}>
+        <li>
+          <Link
+            href="/"
+            className={(active) => (active ? "active" : "")}
+            onClick={closeNavigation}
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/music"
+            className={(active) => (active ? "active" : "")}
+            onClick={closeNavigation}
+          >
+            Music
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="/movies"
+            onClick={closeNavigation}
+            className={(active) => (active ? "active" : "")}
+          >
+            Movies
+          </Link>
+        </li>
+      </ul>
 
       <div id="mobile-toggle">
         {isNavigationOpen ? (
