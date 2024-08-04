@@ -3,8 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import "../css/componenets/AudioPlayer.css";
 import { FaVolumeOff, FaPause, FaPlay } from "react-icons/fa";
 
-const DEFAULT_VOLUME = 0.2;
-
 export default function AudioPlayer({ artworkUrl100, previewUrl }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio());
@@ -17,8 +15,8 @@ export default function AudioPlayer({ artworkUrl100, previewUrl }) {
       }
     };
 
-    volumeSliderRef.current.value = DEFAULT_VOLUME;
-    audioRef.current.volume = DEFAULT_VOLUME;
+    volumeSliderRef.current.value = 0.2;
+    audioRef.current.volume = 0.2;
     audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
 
     return () => {
@@ -33,7 +31,7 @@ export default function AudioPlayer({ artworkUrl100, previewUrl }) {
     }
 
     return () => {
-      audioRef?.current.pause();
+      audioRef.current.pause();
     };
   }, [previewUrl]);
 
