@@ -20,7 +20,6 @@ function App() {
           <Route path="/music" component={Music} />
           <Route path="/movies" component={Movies} />
         </Suspense>
-
         <Footer />
       </WebsiteWrapper>
     </div>

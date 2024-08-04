@@ -2,7 +2,7 @@
   min-height: var(--page-height);
   max-width: var(--max-page-width);
 
-  padding: 10px 20px;
+  padding: 0;
   padding-top: calc(var(--navbar-height) + 10px);
   background-color: var(--main-bg-color);
 }

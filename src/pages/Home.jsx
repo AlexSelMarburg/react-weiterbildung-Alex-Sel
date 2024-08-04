@@ -1,15 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import Button from "../components/Button.jsx";
-import "../css/componenets/Home.css";
+import "../css/componenets/HomePage.css";
 import { FaGithub } from "react-icons/fa";
-import { fetchITunesDataByMedia } from "../fetchITunesData.js";
-import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(() => {
-    fetchITunesDataByMedia("music");
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -20,7 +14,7 @@ export default function Home() {
         <h1>Lorem ipsum dolor sit amet consectetur.</h1>
         <Button
           text="Default BTN"
-          isDisabled={true}
+          // isDisabled={true}
           onClick={() => {
             console.log("Hello");
           }}
@@ -34,7 +28,17 @@ export default function Home() {
           onClick={() => {
             console.log("Hello");
           }}
-          isDisabled={true}
+          // isDisabled={true}
+        />
+
+        <Button
+          icon={<FaGithub />}
+          text="Shadow BTN"
+          hasShadow={true}
+          onClick={() => {
+            console.log("Hello");
+          }}
+          // isDisabled={true}
         />
       </div>
     </>

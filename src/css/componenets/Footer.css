@@ -10,16 +10,16 @@ footer.footer {
 
   span {
     font-size: var(--big-font-size);
-    color: var(--main-text-color);
+    color: var(--secondary-text-color);
     letter-spacing: 1px;
   }
 
   .footer-icon {
-    color: var(--main-text-color);
+    color: var(--secondary-text-color);
     font-size: 2rem;
   }
 
   .footer-icon:hover {
-    color: var(--call-to-action-bg-hover-color);
+    color: var(--call-to-action-bg-color);
   }
 }

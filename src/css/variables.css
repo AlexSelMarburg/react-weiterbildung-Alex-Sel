@@ -1,12 +1,12 @@
 :root {
-  --navbar-height: 76px;
-  --footer-height: 80px;
-  --page-height: 100vh;
-  --max-page-width: 1480px;
+  --navbar-height: 3rem;
+  --footer-height: 4rem;
+  --page-height: 100dvh;
+  --max-page-width: 1040px;
 
   /* FONTS */
-  --heading-font: "Cormorant Garamond", serif;
-  --body-font: "Proza Libre", sans-serif;
+  --heading-font: "Open Sans", sans-serif;
+  --body-font: "Source Sans 3", sans-serif;
 
   --giant-font-size: 5rem;
   --huge-font-size: 3.5rem;
@@ -18,20 +18,21 @@
 
   /* COLORS */
   --body-bg-color: #191714;
-  --main-bg-color: #000000;
-  --secondary-bg-color: #1d1d1d;
+  --main-bg-color: #ffffff;
+  --secondary-bg-color: #000000;
 
   --accent-color-1: #b9654b;
-  --accent-color-2: #e65757;
-  --accent-color-3: #fd6c03;
+  --accent-color-2: #f0f0f0;
+  --accent-color-3: #b1ffb9;
+  --accent-color-4: #f55359;
 
-  --main-text-color: #fff;
-  --accent-text-color-1: #fadec6;
+  --main-text-color: #000;
+  --secondary-text-color: #fff;
+  --accent-text-color-light-grey: #a1a1a1;
   --accent-text-color-2: #f5b70c;
+  --accent-text-color-3: #fcedce;
 
-  --call-to-action-bg-color: #d51f5a;
-  --call-to-action-bg-hover-color: #ffd032;
-  --call-to-action-active-color: #f5b70c;
+  --call-to-action-bg-color: #f5e700;
   --call-to-action-text-color: #000;
 }
 

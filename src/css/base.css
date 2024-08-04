@@ -6,6 +6,7 @@ h5,
 h6 {
   font-family: var(--heading-font);
   letter-spacing: 2px;
+  font-weight: 600;
 }
 
 h1 {

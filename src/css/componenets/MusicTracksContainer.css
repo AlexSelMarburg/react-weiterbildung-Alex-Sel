@@ -1,0 +1,20 @@
+.music-tracks-container-wrapper {
+  height: 100%;
+  padding: 7px;
+  /* background-color: var(--secondary-bg-color); */
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  .music-tracks-container {
+    /* background-color: var(--secondary-bg-color); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 7px;
+    overflow-y: auto;
+  }
+}

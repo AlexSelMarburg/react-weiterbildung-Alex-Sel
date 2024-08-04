@@ -7,8 +7,17 @@ export default function Button({
   icon = null,
   isInverted = false,
   isDisabled = false,
+  hasShadow = false,
 }) {
-  const classes = isInverted ? "inverted btn" : "btn";
+  let classes = "btn";
+  if (isInverted) {
+    classes += " inverted";
+  }
+
+  if (hasShadow) {
+    classes += " shadow";
+  }
+  // const classes = isInverted ? "inverted btn" : "btn";
 
   return (
     <button disabled={isDisabled} className={classes} onClick={onClick}>

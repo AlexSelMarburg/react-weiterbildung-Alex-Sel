@@ -2,7 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 40px;
+  padding: 5px 25px;
   height: var(--navbar-height);
   position: fixed;
   top: 0;
@@ -16,7 +16,7 @@ nav {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(0, 0, 0, 0.07);
   }
 
   ul {
@@ -33,7 +33,7 @@ nav {
         text-decoration: none;
         font-size: 1.2rem;
         font-weight: 600;
-        color: var(--main-font-color);
+        color: var(--accent-text-color-light-grey);
         place-items: center;
         transition: 0.3s ease;
         font-family: var(--body-font);
@@ -42,14 +42,14 @@ nav {
         letter-spacing: 1px;
 
         &.active {
-          color: var(--accent-text-color-2);
+          color: var(--main-text-color);
         }
 
         &::after {
           content: "";
           height: 2px;
           width: 50%;
-          background-color: #fff;
+          background-color: var(--main-text-color);
           left: 25%;
           bottom: -2px;
           transition: all 0.35s ease;
@@ -69,8 +69,8 @@ nav {
 }
 
 #navbar-logo {
-  color: #fff;
-  font-size: 3rem;
+  color: var(--secondary-bg-color);
+  font-size: 2.1rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -80,7 +80,7 @@ nav {
   display: none;
 
   .mobile-toggle-btn {
-    color: #fff;
+    color: var(--main-text-color);
     font-size: 24px;
   }
 
@@ -91,6 +91,7 @@ nav {
 
 @media screen and (max-width: 740px) {
   nav {
+    padding: 5px 15px;
     ul {
       display: flex;
       flex-direction: column;
@@ -109,6 +110,10 @@ nav {
 
       &.active {
         right: 0;
+      }
+
+      li a.active {
+        color: #fff;
       }
     }
   }
