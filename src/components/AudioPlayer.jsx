@@ -49,7 +49,7 @@ export default function AudioPlayer({ artworkUrl100, previewUrl }) {
     }
   };
 
-  const largerArtworkUrl = artworkUrl100?.replace("100x100bb", "300x300bb");
+  const largerArtworkUrl = artworkUrl100?.replace("100x100bb", "600x600bb");
 
   return (
     <div className="audio-player">

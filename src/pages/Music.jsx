@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import MusicTracksContainer from "../components/MusicTracksContainer.jsx";
 import "../css/componenets/MusicPage.css";
+import FilterForm from "../components/FilterForm.jsx";
 
 export default function Music() {
   const [activeFileId, setActiveFileId] = useState(null);
@@ -39,7 +40,9 @@ export default function Music() {
       </Helmet>
 
       <div id="music-page" className="page">
-        <div className="top-container"></div>
+        <div className="top-container">
+          <FilterForm />
+        </div>
         <div className="content-container">
           <div className="left-container">
             <MusicTracksContainer

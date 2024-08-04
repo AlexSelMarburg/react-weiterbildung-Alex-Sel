@@ -1,0 +1,30 @@
+.filter-form {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  min-width: 20rem;
+
+  #music-search {
+    height: 2.4rem;
+    width: 100%;
+    border-radius: 2rem;
+    letter-spacing: 1px;
+    padding-left: 15px;
+    font-size: var(--big-font-size);
+
+    border: 2px solid rgba(0, 0, 0, 0.45); /* Overridden by border: 2px inset; */
+    line-height: 3;
+
+    &::-webkit-search-cancel-button {
+      position: relative;
+      right: 10px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+      border: 2px solid rgba(0, 0, 0, 0.9);
+    }
+  }
+}
