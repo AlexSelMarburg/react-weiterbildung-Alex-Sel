@@ -8,6 +8,7 @@ import "../css/componenets/MusicPage.css";
 import FilterForm from "../components/FilterForm.jsx";
 import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
 import { defaultMusikTracks } from "../data/defaultMusikTracks.js";
+import { Oval } from "react-loader-spinner";
 
 export default function Music() {
   const [activeFileId, setActiveFileId] = useState(null);
@@ -24,7 +25,7 @@ export default function Music() {
   const {
     data: audioFiles = [],
     isError,
-    isPending,
+    isPending = true,
     isSuccess,
   } = useQuery({
     queryKey: ["term", debouncedSearchTerm],
@@ -51,8 +52,9 @@ export default function Music() {
         </div>
         <div className="content-container">
           <div className="left-container">
-            {isSuccess && audioFiles.length > 0 && (
+            {!isError && (
               <MusicTracksContainer
+                isPending={isPending}
                 audioFiles={audioFiles}
                 handleIsActiveFile={handleIsActiveFile}
                 activeFileId={activeFileId}
@@ -60,7 +62,7 @@ export default function Music() {
             )}
           </div>
           <div className="right-container">
-            {isSuccess && audioFile && <AudioPlayer {...audioFile} />}
+            {!isError && <AudioPlayer {...audioFile} isPending={isPending} />}
           </div>
         </div>
       </div>

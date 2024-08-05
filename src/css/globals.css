@@ -6,3 +6,17 @@
   padding-top: calc(var(--navbar-height) + 10px);
   background-color: var(--main-bg-color);
 }
+
+@keyframes pulse-background {
+  0% {
+    background-color: #c0c0c0;
+  }
+
+  50% {
+    background-color: #a0a0a0;
+  }
+
+  100% {
+    background-color: #c0c0c0;
+  }
+}

@@ -1,13 +1,19 @@
 .music-tracks-container-wrapper {
   height: 100%;
   padding: 7px;
-  /* background-color: var(--secondary-bg-color); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.25);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+  &.loading {
+    animation: pulse-background 2s infinite;
+  }
+
   .music-tracks-container {
-    /* background-color: var(--secondary-bg-color); */
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;

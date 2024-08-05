@@ -8,11 +8,9 @@ export default function LoadingScreen() {
         visible={true}
         height="60"
         width="60"
-        color="#fff"
+        color="#000"
         strokeWidth={5}
         ariaLabel="oval-loading"
-        wrapperStyle={{}}
-        wrapperClass=""
       />
       <h3>Loading</h3>
     </div>
