@@ -1,4 +1,6 @@
 import "../css/componenets/MusicTrack.css";
+import { getShortenedString } from "../helpers/utils.js";
+
 export default function MusicTrack({
   artistName,
   artworkUrl100,
@@ -19,8 +21,10 @@ export default function MusicTrack({
         <img src={imgUrl} alt="Album Art" />
       </div>
       <div className="info-container">
-        <h3 className="artist">{artistName}</h3>
-        <p className="track-name">{trackCensoredName}</p>
+        <h3 className="artist">{getShortenedString(artistName, 25)}</h3>
+        <p className="track-name">
+          {getShortenedString(trackCensoredName, 45)}
+        </p>
       </div>
     </div>
   );
