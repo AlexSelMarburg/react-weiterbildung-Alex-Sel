@@ -9,7 +9,6 @@ export default function MusicTracksContainer({
   activeFileId,
 }) {
   return (
-    // <div className="music-tracks-container-wrapper">
     <div
       className={`music-tracks-container-wrapper ${isPending ? "loading" : ""}`}
     >
@@ -24,7 +23,11 @@ export default function MusicTracksContainer({
         />
       )}
 
-      {!isPending && (
+      {!isPending && audioFiles.length === 0 && (
+        <div className="no-files-found">Keine Tracks gefunden</div>
+      )}
+
+      {!isPending && audioFiles.length > 0 && (
         <div className="music-tracks-container">
           {audioFiles.map((audioFile) => (
             <MusicTrack

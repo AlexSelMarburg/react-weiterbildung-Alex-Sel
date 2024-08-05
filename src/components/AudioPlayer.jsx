@@ -3,24 +3,20 @@ import { useEffect, useRef, useState } from "react";
 import "../css/componenets/AudioPlayer.css";
 import { FaVolumeOff, FaPause, FaPlay } from "react-icons/fa";
 
-export default function AudioPlayer({ artworkUrl100, previewUrl, isPending }) {
+export default function AudioPlayer({
+  artworkUrl100,
+  previewUrl,
+  isPending = true,
+}) {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio());
-  const volumeSliderRef = useRef(null);
+  const volumeRef = useRef(0.5);
 
   useEffect(() => {
     const handleTimeUpdate = () => {
       if (audioRef.current.currentTime === audioRef.current.duration) {
         setIsPlaying(false);
       }
-    };
-
-    volumeSliderRef.current.value = 0.2;
-    audioRef.current.volume = 0.2;
-    audioRef.current.addEventListener("timeupdate", handleTimeUpdate);
-
-    return () => {
-      audioRef.current.removeEventListener("timeupdate", handleTimeUpdate);
     };
   }, []);
 
@@ -36,6 +32,7 @@ export default function AudioPlayer({ artworkUrl100, previewUrl, isPending }) {
   }, [previewUrl]);
 
   const handleVolumeChange = (volume) => {
+    volumeRef.current = volume;
     audioRef.current.volume = Number(volume);
   };
 
@@ -52,11 +49,12 @@ export default function AudioPlayer({ artworkUrl100, previewUrl, isPending }) {
   const largerArtworkUrl = artworkUrl100?.replace("100x100bb", "600x600bb");
 
   return (
-    // <div className="audio-player">
     <div className={`audio-player ${isPending ? "loading" : ""}`}>
       <div className="wrapper-container">
-        {!isPending && <img src={largerArtworkUrl || ""} alt="Album Art" />}
-        {!isPending && (
+        {!isPending && previewUrl && (
+          <img src={largerArtworkUrl || ""} alt="Album Art" />
+        )}
+        {!isPending && previewUrl && (
           <div className="actions">
             <button onClick={togglePlay}>
               {isPlaying ? <FaPause /> : <FaPlay />}
@@ -64,15 +62,15 @@ export default function AudioPlayer({ artworkUrl100, previewUrl, isPending }) {
           </div>
         )}
         <div className="volume-setting">
-          {!isPending && (
+          {!isPending && previewUrl && (
             <>
               <FaVolumeOff className="volume-icon" />
               <input
-                ref={volumeSliderRef}
                 type="range"
                 min="0"
                 max="1"
                 step="0.01"
+                defaultValue={volumeRef.current}
                 className="volume-slider"
                 onChange={(e) => handleVolumeChange(e.target.value)}
               />
