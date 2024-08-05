@@ -7,9 +7,27 @@
   border-radius: 5px;
   width: 100%;
   margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .serch-info-count {
     font-weight: 500;
     color: var(--call-to-action-bg-color);
+  }
+
+  .scroll-up-btn {
+    background-color: var(--main-bg-color);
+    color: var(--secondary-bg-color);
+    border: none;
+    height: 2.3rem;
+    width: 2.5rem;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--call-to-action-bg-color);
+    }
   }
 }

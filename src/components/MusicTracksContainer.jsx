@@ -10,6 +10,11 @@ export default function MusicTracksContainer({
   activeFileId,
   isUsingDefaultTracks,
 }) {
+  function handleScrollToTop() {
+    const container = document.querySelector(".music-tracks-container");
+    container.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div
       className={`music-tracks-container-wrapper ${isPending ? "loading" : ""}`}
@@ -26,7 +31,10 @@ export default function MusicTracksContainer({
       )}
 
       {!isUsingDefaultTracks && !isPending && audioFiles.length > 0 && (
-        <SearchResults count={audioFiles.length} />
+        <SearchResults
+          count={audioFiles.length}
+          handleScrollToTop={handleScrollToTop}
+        />
       )}
 
       {!isPending && audioFiles.length === 0 && (
