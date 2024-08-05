@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import MusicTracksContainer from "../components/MusicTracksContainer.jsx";
 import "../css/componenets/MusicPage.css";
-import FilterForm from "../components/FilterForm.jsx";
+import SearchForm from "../components/SearchForm.jsx";
 import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
 import { defaultMusikTracks } from "../data/defaultMusikTracks.js";
 
@@ -47,7 +47,7 @@ export default function Music() {
 
       <div id="music-page" className="page">
         <div className="top-container">
-          <FilterForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          <SearchForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
         <div className="content-container">
           {!isError && audioFiles && (
@@ -59,6 +59,7 @@ export default function Music() {
                     audioFiles={audioFiles}
                     handleIsActiveFile={handleIsActiveFile}
                     activeFileId={activeFileId}
+                    isUsingDefaultTracks={audioFiles === defaultMusikTracks}
                   />
                 )}
               </div>

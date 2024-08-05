@@ -1,6 +1,6 @@
-import "../css/componenets/FilterForm.css";
+import "../css/componenets/SearchForm.css";
 
-export default function FilterForm({ searchTerm, setSearchTerm }) {
+export default function SearchForm({ searchTerm, setSearchTerm }) {
   return (
     <form className="filter-form" onSubmit={(e) => e.preventDefault()}>
       <input

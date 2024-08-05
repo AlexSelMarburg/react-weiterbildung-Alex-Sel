@@ -1,0 +1,15 @@
+.serch-info {
+  background-color: var(--secondary-bg-color);
+  color: var(--secondary-text-color);
+  letter-spacing: 1px;
+  font-size: var(--big-font-size);
+  padding: 7px 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+
+  .serch-info-count {
+    font-weight: 500;
+    color: var(--call-to-action-bg-color);
+  }
+}

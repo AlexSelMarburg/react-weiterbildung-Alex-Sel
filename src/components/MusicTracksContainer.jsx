@@ -1,12 +1,14 @@
 import "../css/componenets/MusicTracksContainer.css";
 import MusicTrack from "./MusicTrack.jsx";
 import { Oval } from "react-loader-spinner";
+import SearchResults from "./SearchResults.jsx";
 
 export default function MusicTracksContainer({
   isPending,
   audioFiles,
   handleIsActiveFile,
   activeFileId,
+  isUsingDefaultTracks,
 }) {
   return (
     <div
@@ -21,6 +23,10 @@ export default function MusicTracksContainer({
           strokeWidth={5}
           ariaLabel="oval-loading"
         />
+      )}
+
+      {!isUsingDefaultTracks && !isPending && audioFiles.length > 0 && (
+        <SearchResults count={audioFiles.length} />
       )}
 
       {!isPending && audioFiles.length === 0 && (
