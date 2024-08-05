@@ -1,19 +1,25 @@
 import { Helmet } from "react-helmet-async";
 import AudioPlayer from "../components/AudioPlayer.jsx";
-import { fetchITunesDataByMedia } from "../fetchITunesData.js";
+import { fetchITunesDataByMedia } from "../helpers/fetchITunesData.js";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import MusicTracksContainer from "../components/MusicTracksContainer.jsx";
 import "../css/componenets/MusicPage.css";
 import FilterForm from "../components/FilterForm.jsx";
+import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
+import { defaultMusikTracks } from "../data/defaultMusikTracks.js";
 
 export default function Music() {
   const [activeFileId, setActiveFileId] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
+  const debouncedSearchTerm = useDebouncedValue(searchTerm, 600);
 
   function handleIsActiveFile(id) {
     if (activeFileId === id) return;
     setActiveFileId(id);
   }
+
+  useSearchParams(debouncedSearchTerm);
 
   const {
     data: audioFiles = [],
@@ -21,7 +27,7 @@ export default function Music() {
     isPending,
     isSuccess,
   } = useQuery({
-    queryKey: ["term", "dubstep"],
+    queryKey: ["term", debouncedSearchTerm],
     queryFn: fetchAudio,
   });
 
@@ -41,18 +47,20 @@ export default function Music() {
 
       <div id="music-page" className="page">
         <div className="top-container">
-          <FilterForm />
+          <FilterForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
         <div className="content-container">
           <div className="left-container">
-            <MusicTracksContainer
-              audioFiles={audioFiles}
-              handleIsActiveFile={handleIsActiveFile}
-              activeFileId={activeFileId}
-            />
+            {isSuccess && audioFiles.length > 0 && (
+              <MusicTracksContainer
+                audioFiles={audioFiles}
+                handleIsActiveFile={handleIsActiveFile}
+                activeFileId={activeFileId}
+              />
+            )}
           </div>
           <div className="right-container">
-            <AudioPlayer {...audioFile} />
+            {isSuccess && audioFile && <AudioPlayer {...audioFile} />}
           </div>
         </div>
       </div>
@@ -60,15 +68,31 @@ export default function Music() {
   );
 }
 
+function getInitialSearchTerm() {
+  const url = new URL(window.location.href);
+  return url.searchParams.get("search") ?? "";
+}
+
+function useSearchParams(debouncedSearchTerm) {
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete("search");
+
+    if (debouncedSearchTerm.length >= 2) {
+      url.searchParams.set("search", debouncedSearchTerm);
+    }
+
+    window.history.replaceState({}, "", url);
+  }, [debouncedSearchTerm]);
+}
+
 async function fetchAudio({ queryKey }) {
   const searchTerm = queryKey[1];
 
-  // if (searchTerm.length < 2) {
-  //   return defaultMovies;
-  // }
-  // console.log(searchTerm);
+  if (searchTerm.length < 2) {
+    return defaultMusikTracks;
+  }
 
   const data = await fetchITunesDataByMedia(searchTerm);
-  // console.log(data);
   return data;
 }
