@@ -10,11 +10,16 @@
 
   &:hover {
     cursor: pointer;
-    background-color: var(--call-to-action-bg-color);
+    background-color: var(--accent-color-1);
   }
 
   &.active {
-    background-color: var(--accent-color-3);
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+
+    .info-container h3 {
+      color: var(--accent-text-color-2);
+    }
   }
 
   .img-container {
@@ -43,6 +48,28 @@
       letter-spacing: 1px;
       font-weight: 500;
       font-size: var(--big-font-size);
+      color: var(--main-text-color);
+    }
+  }
+
+  .bookmark-container {
+    height: 100%;
+    padding-right: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > .bookmark {
+      font-size: 2.5rem;
+
+      &.active {
+        color: var(--call-to-action-bg-color);
+      }
+
+      &:hover {
+        cursor: pointer;
+        color: var(--call-to-action-bg-color);
+      }
     }
   }
 }

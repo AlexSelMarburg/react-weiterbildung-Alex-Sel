@@ -1,4 +1,3 @@
-// import "../src/css/componenets/AudioPlayer.css";
 import { useEffect, useRef, useState } from "react";
 import "../css/componenets/AudioPlayer.css";
 import { FaVolumeOff, FaPause, FaPlay } from "react-icons/fa";
@@ -11,14 +10,6 @@ export default function AudioPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(new Audio());
   const volumeRef = useRef(0.5);
-
-  useEffect(() => {
-    const handleTimeUpdate = () => {
-      if (audioRef.current.currentTime === audioRef.current.duration) {
-        setIsPlaying(false);
-      }
-    };
-  }, []);
 
   useEffect(() => {
     if (previewUrl) {

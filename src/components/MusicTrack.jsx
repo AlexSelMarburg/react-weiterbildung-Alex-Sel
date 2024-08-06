@@ -21,9 +21,9 @@ export default function MusicTrack({
         <img src={imgUrl} alt="Album Art" />
       </div>
       <div className="info-container">
-        <h3 className="artist">{getShortenedString(artistName, 25)}</h3>
+        <h3 className="artist">{getShortenedString(artistName, 20)}</h3>
         <p className="track-name">
-          {getShortenedString(trackCensoredName, 45)}
+          {getShortenedString(trackCensoredName, 40)}
         </p>
       </div>
     </div>

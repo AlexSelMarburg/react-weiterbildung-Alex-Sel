@@ -8,6 +8,7 @@ import "../css/componenets/MusicPage.css";
 import SearchForm from "../components/SearchForm.jsx";
 import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
 import { defaultMusikTracks } from "../data/defaultMusikTracks.js";
+import ErrorDisplay from "../components/ErrorDisplay.jsx";
 
 export default function Music() {
   const [activeFileId, setActiveFileId] = useState(null);
@@ -23,9 +24,9 @@ export default function Music() {
 
   const {
     data: audioFiles = [],
-    isError,
     isPending = true,
-    isSuccess,
+    isError,
+    error,
   } = useQuery({
     queryKey: ["term", debouncedSearchTerm],
     queryFn: fetchAudio,
@@ -50,23 +51,20 @@ export default function Music() {
           <SearchForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </div>
         <div className="content-container">
+          {isError && <ErrorDisplay errorMsg={error.message} />}
           {!isError && audioFiles && (
             <>
               <div className="left-container">
-                {!isError && (
-                  <MusicTracksContainer
-                    isPending={isPending}
-                    audioFiles={audioFiles}
-                    handleIsActiveFile={handleIsActiveFile}
-                    activeFileId={activeFileId}
-                    isUsingDefaultTracks={audioFiles === defaultMusikTracks}
-                  />
-                )}
+                <MusicTracksContainer
+                  isPending={isPending}
+                  audioFiles={audioFiles}
+                  handleIsActiveFile={handleIsActiveFile}
+                  activeFileId={activeFileId}
+                  isUsingDefaultTracks={audioFiles === defaultMusikTracks}
+                />
               </div>
               <div className="right-container">
-                {!isError && (
-                  <AudioPlayer {...audioFile} isPending={isPending} />
-                )}
+                <AudioPlayer {...audioFile} isPending={isPending} />
               </div>
             </>
           )}
