@@ -41,34 +41,34 @@ export default function AudioPlayer({
 
   return (
     <div className={`audio-player ${isPending ? "loading" : ""}`}>
-      <div className="wrapper-container">
-        {!isPending && previewUrl && (
-          <img src={largerArtworkUrl || ""} alt="Album Art" />
-        )}
-        {!isPending && previewUrl && (
-          <div className="actions">
-            <button onClick={togglePlay}>
-              {isPlaying ? <FaPause /> : <FaPlay />}
-            </button>
+      {!isPending && previewUrl && (
+        <>
+          <div className="wrapper-container">
+            <img src={largerArtworkUrl || ""} alt="Album Art" />
+
+            <div className="actions">
+              <button onClick={togglePlay}>
+                {isPlaying ? <FaPause /> : <FaPlay />}
+              </button>
+            </div>
+
+            <div className="volume-setting">
+              <>
+                <FaVolumeOff className="volume-icon" />
+                <input
+                  type="range"
+                  min="0"
+                  max="1"
+                  step="0.01"
+                  defaultValue={volumeRef.current}
+                  className="volume-slider"
+                  onChange={(e) => handleVolumeChange(e.target.value)}
+                />
+              </>
+            </div>
           </div>
-        )}
-        <div className="volume-setting">
-          {!isPending && previewUrl && (
-            <>
-              <FaVolumeOff className="volume-icon" />
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                defaultValue={volumeRef.current}
-                className="volume-slider"
-                onChange={(e) => handleVolumeChange(e.target.value)}
-              />
-            </>
-          )}
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 }

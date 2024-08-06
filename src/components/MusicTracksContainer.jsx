@@ -38,7 +38,7 @@ export default function MusicTracksContainer({
       )}
 
       {!isPending && audioFiles.length === 0 && (
-        <div className="no-files-found">Keine Tracks</div>
+        <div className="no-files-found">Keine Tracks gefunden</div>
       )}
 
       {!isPending && audioFiles.length > 0 && (

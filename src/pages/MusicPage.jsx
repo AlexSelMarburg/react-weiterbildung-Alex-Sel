@@ -9,6 +9,7 @@ import SearchForm from "../components/SearchForm.jsx";
 import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
 import { defaultMusikTracks } from "../data/defaultMusikTracks.js";
 import ErrorDisplay from "../components/ErrorDisplay.jsx";
+import TrackDataDisplay from "../components/TrackDataDisplay.jsx";
 
 export default function Music() {
   const [activeFileId, setActiveFileId] = useState(null);
@@ -65,6 +66,7 @@ export default function Music() {
               </div>
               <div className="right-container">
                 <AudioPlayer {...audioFile} isPending={isPending} />
+                <TrackDataDisplay isPending={isPending} {...audioFile} />
               </div>
             </>
           )}
