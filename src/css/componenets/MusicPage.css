@@ -25,11 +25,11 @@
     .left-container {
       flex: 8;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: flex-start;
+      justify-content: flex-start;
       padding: 10px;
 
-      height: calc(
+      max-height: calc(
         var(--page-height) - var(--navbar-height) - var(--top-container-height) -
           10px
       );

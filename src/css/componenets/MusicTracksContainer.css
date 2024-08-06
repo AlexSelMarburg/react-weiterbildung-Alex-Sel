@@ -1,4 +1,7 @@
 .music-tracks-container-wrapper {
+  max-height: calc(
+    var(--page-height) - var(--navbar-height) - var(--footer-height) - 10px
+  );
   height: 100%;
   width: 100%;
   padding: 7px;
@@ -16,6 +19,7 @@
 
   .no-files-found {
     width: 100%;
+    max-height: 100vh;
     height: 100%;
     display: grid;
     place-items: center;

@@ -4,11 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
+
 /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
