@@ -4,21 +4,23 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.55);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.11) 0px 3px 6px;
   background-color: var(--main-bg-color);
 
   &:hover {
     cursor: pointer;
-    background-color: var(--accent-color-1);
+    background-color: var(--accent-text-color-3);
   }
 
   &.active {
-    background-color: var(--secondary-bg-color);
+    background-color: var(--accent-color-dark-1);
     color: var(--secondary-text-color);
 
     .info-container h3 {
-      color: var(--accent-text-color-2);
+      color: var(--accent-text-color-3);
     }
   }
 
@@ -36,7 +38,7 @@
   .info-container {
     height: 100%;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.825rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -49,27 +51,6 @@
       font-weight: 500;
       font-size: var(--big-font-size);
       color: var(--main-text-color);
-    }
-  }
-
-  .bookmark-container {
-    height: 100%;
-    padding-right: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    > .bookmark {
-      font-size: 2.5rem;
-
-      &.active {
-        color: var(--call-to-action-bg-color);
-      }
-
-      &:hover {
-        cursor: pointer;
-        color: var(--call-to-action-bg-color);
-      }
     }
   }
 }

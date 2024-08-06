@@ -18,6 +18,18 @@ nav {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border-color: rgba(0, 0, 0, 0.15);
+
+    ul {
+      background-color: var(--accent-color-dark-1);
+    }
+
+    a::after {
+      background-color: var(--main-bg-color);
+    }
+
+    ul li a.active {
+      color: var(--secondary-text-color);
+    }
   }
 
   ul {
@@ -26,7 +38,6 @@ nav {
     justify-content: center;
     gap: 20px;
     padding: 0 25px;
-    background-color: var(--main-bg-color);
     height: 100%;
 
     li {
@@ -39,7 +50,6 @@ nav {
         font-weight: 400;
         color: var(--accent-text-color-light-grey);
         place-items: center;
-        transition: 0.3s ease;
         font-family: var(--body-font);
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -77,6 +87,11 @@ nav {
   font-weight: 600;
   display: flex;
   align-items: center;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 #mobile-toggle {
@@ -102,9 +117,9 @@ nav {
       justify-content: flex-start;
       position: fixed;
       top: var(--navbar-height);
-      right: -320px;
+      right: -280px;
       height: 100vh;
-      width: 310px;
+      width: 240px;
       background-color: var(--secondary-bg-color);
       box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
       padding: 80px 0 0 20px;

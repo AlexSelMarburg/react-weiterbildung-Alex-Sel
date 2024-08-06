@@ -13,11 +13,11 @@
 
   .serch-info-count {
     font-weight: 500;
-    color: var(--call-to-action-bg-color);
+    color: var(--accent-text-color-3);
   }
 
   .scroll-up-btn {
-    background-color: var(--main-bg-color);
+    background-color: var(--accent-text-color-3);
     color: var(--secondary-bg-color);
     border: none;
     height: 2.3rem;
