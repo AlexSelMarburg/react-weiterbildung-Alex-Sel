@@ -21,7 +21,8 @@ export default function Button({
 
   return (
     <button disabled={isDisabled} className={classes} onClick={onClick}>
-      {icon ?? <span className="btn-icon">{icon}</span>} {text}
+      {icon ? <span className="btn-icon">{icon}</span> : null}
+      {text}
     </button>
   );
 }

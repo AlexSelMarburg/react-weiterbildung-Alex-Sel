@@ -1,12 +1,12 @@
 .btn {
   font-size: var(--big-font-size);
-  padding: 10px 15px;
+  padding: 8px 15px;
   background-color: var(--call-to-action-bg-color);
   border: none;
   transition: background-color 0.2s ease;
   letter-spacing: 2px;
   font-weight: 500;
-  margin: 5px;
+
   color: var(--secondary-bg-color);
   display: flex;
   align-items: center;

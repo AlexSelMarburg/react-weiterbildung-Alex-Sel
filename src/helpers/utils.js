@@ -1,4 +1,6 @@
 export const getShortenedString = (str, maxLength, ellipsis = "...") => {
+  if (!str) return "";
+
   if (str.length > maxLength) {
     return str.slice(0, maxLength) + ellipsis;
   }

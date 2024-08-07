@@ -1,0 +1,59 @@
+.video-media-card {
+  max-width: 18rem;
+  aspect-ratio: 1 / 1.5;
+  background-color: red;
+  border: 2px solid var(--secondary-bg-color);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 3px;
+  overflow: hidden;
+
+  /* position: absolute; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info-overlay {
+    padding: 10px;
+    position: absolute;
+    height: 75%;
+    width: 100%;
+
+    bottom: -100%;
+    left: 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(7px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    transition: all 0.65s ease;
+
+    h3 {
+      color: var(--accent-color-2);
+      text-shadow: 1px 1px 2px var(--secondary-bg-color);
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: var(--secondary-text-color);
+      text-shadow: 1px 1px 2px var(--secondary-bg-color);
+      line-height: 1.2rem;
+      letter-spacing: 2px;
+    }
+  }
+
+  &:hover {
+    .info-overlay {
+      bottom: 0;
+    }
+  }
+}
