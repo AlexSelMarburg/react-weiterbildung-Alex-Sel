@@ -1,0 +1,74 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+
+  .modal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(var(--max-page-width) - 200px);
+    max-width: 100%;
+
+    video {
+      width: 100%;
+    }
+  }
+
+  .movie-info {
+    background-color: var(--accent-color-dark-1);
+    color: var(--secondary-text-color);
+    width: 100%;
+    padding: 10px;
+
+    h3 {
+      color: var(--accent-color-2);
+      margin-bottom: 10px;
+
+      span {
+        color: var(--secondary-text-color);
+      }
+    }
+
+    p {
+      letter-spacing: 1px;
+      line-height: 1.25rem;
+
+      .title {
+        font-weight: 600;
+        color: var(--accent-color-2);
+        margin-right: 5px;
+      }
+    }
+
+    .description {
+      color: var(--secondary-text-color);
+      line-height: 1.2rem;
+      letter-spacing: 2px;
+      margin-top: 10px;
+    }
+
+    .apple-tv-link {
+      margin-top: 10px;
+      a {
+        text-decoration: none;
+        color: aqua;
+        letter-spacing: 1px;
+        font-size: var(--big-font-size);
+
+        &:hover {
+          color: var(--call-to-action-bg-color);
+        }
+      }
+    }
+  }
+}

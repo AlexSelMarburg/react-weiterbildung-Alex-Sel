@@ -11,14 +11,28 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchITunesDataByMedia } from "../helpers/fetchITunesData.js";
 import VideoMediaCard from "../components/VideoMediaCard.jsx";
 
-const typesOfVideMedia = ["movie", "tvShow", "podcast"];
+import Modal from "../components/VideoModal.jsx";
+
+const typesOfVideMedia = ["movie", "tvShow", "audiobook"];
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
   const [mediaType, setMediaType] = useState(typesOfVideMedia[0]);
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 600);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeVideoFile, setActiveVideoFile] = useState(null);
 
-  console.log(searchTerm, mediaType);
+  function handleOpenVideoModal(file) {
+    setActiveVideoFile(file);
+    setIsModalOpen(true);
+  }
+
+  function handleCloseVideoModal(e) {
+    if (e.target === e.currentTarget) {
+      setActiveVideoFile(null);
+      setIsModalOpen(false);
+    }
+  }
 
   useSearchParams(debouncedSearchTerm);
 
@@ -32,7 +46,9 @@ export default function Movies() {
     queryFn: fetchVideo,
   });
 
-  console.log(videoFiles?.[0]);
+  // console.log(searchTerm, mediaType);
+  // console.log(videoFiles?.[0]);
+  // console.log(activeVideoFile);
 
   return (
     <>
@@ -57,11 +73,24 @@ export default function Movies() {
         <div className="bottom-container">
           {!isPending && !isError && videoFiles.length > 0 && (
             <div className="fetched-data-container">
-              <VideoMediaCard {...videoFiles?.[0]} />
+              <VideoMediaCard
+                file={videoFiles?.[0]}
+                handleOpenVideoModal={handleOpenVideoModal}
+              />
             </div>
           )}
         </div>
       </div>
+
+      {isModalOpen && (
+        <Modal
+          handleCloseVideoModal={handleCloseVideoModal}
+          isOpen={isModalOpen}
+          file={activeVideoFile}
+        >
+          <h2>Hallo Modal</h2>
+        </Modal>
+      )}
     </>
   );
 }
