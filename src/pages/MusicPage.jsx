@@ -10,8 +10,12 @@ import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
 import { defaultMusikTracks } from "../data/defaultMusikTracks.js";
 import ErrorDisplay from "../components/ErrorDisplay.jsx";
 import TrackDataDisplay from "../components/TrackDataDisplay.jsx";
+import {
+  getInitialSearchTerm,
+  useSearchParams,
+} from "../hooks/useSearchParams.js";
 
-export default function Music() {
+export default function MusicPage() {
   const [activeFileId, setActiveFileId] = useState(null);
   const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 600);
@@ -74,24 +78,6 @@ export default function Music() {
       </div>
     </>
   );
-}
-
-function getInitialSearchTerm() {
-  const url = new URL(window.location.href);
-  return url.searchParams.get("search") ?? "";
-}
-
-function useSearchParams(debouncedSearchTerm) {
-  useEffect(() => {
-    const url = new URL(window.location.href);
-    url.searchParams.delete("search");
-
-    if (debouncedSearchTerm.length >= 2) {
-      url.searchParams.set("search", debouncedSearchTerm);
-    }
-
-    window.history.replaceState({}, "", url);
-  }, [debouncedSearchTerm]);
 }
 
 async function fetchAudio({ queryKey }) {

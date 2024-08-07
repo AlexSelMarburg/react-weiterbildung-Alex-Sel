@@ -8,7 +8,7 @@ import { Navbar } from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
 import WebsiteWrapper from "./components/WebsiteWrapper.jsx";
 const Music = lazy(() => import("./pages/MusicPage.jsx"));
-const Movies = lazy(() => import("./pages/Movies.jsx"));
+const Video = lazy(() => import("./pages/VideoPage.jsx"));
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/" component={Home} />
         <Suspense fallback={<LoadingScreen />}>
           <Route path="/music" component={Music} />
-          <Route path="/movies" component={Movies} />
+          <Route path="/movies" component={Video} />
         </Suspense>
         <Footer />
       </WebsiteWrapper>
