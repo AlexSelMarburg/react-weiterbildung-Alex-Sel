@@ -13,7 +13,13 @@ import VideoMediaCard from "../components/VideoMediaCard.jsx";
 
 import Modal from "../components/VideoModal.jsx";
 
-const typesOfVideMedia = ["movie", "tvShow", "audiobook", "musicVideo"];
+// const typesOfVideMedia = ["movie", "tvShow", "audiobook", "musicVideo"];
+const typesOfVideMedia = {
+  movie: "Filme",
+  tvShow: "Serien",
+  audiobook: "Bücher",
+  musicVideo: "Musikvideos",
+};
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
@@ -49,10 +55,6 @@ export default function Movies() {
     queryFn: fetchVideo,
   });
 
-  // console.log(searchTerm, mediaType);
-  // console.log(videoFiles?.[0]);
-  // console.log(activeVideoFile);
-
   return (
     <>
       <Helmet>
@@ -66,9 +68,9 @@ export default function Movies() {
             value={mediaType}
             onChange={(e) => setMediaType(e.target.value)}
           >
-            {typesOfVideMedia.map((type) => (
-              <option key={type} value={type}>
-                {type}
+            {Object.entries(typesOfVideMedia).map(([key, value]) => (
+              <option key={key} value={key}>
+                {value}
               </option>
             ))}
           </select>

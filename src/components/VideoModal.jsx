@@ -13,6 +13,8 @@ export default function Modal({ handleCloseVideoModal, file }) {
     description,
     trackName,
     collectionCensoredName,
+    trackViewUrl,
+    collectionViewUrl,
   } = file;
   console.log(file);
 
@@ -49,11 +51,11 @@ export default function Modal({ handleCloseVideoModal, file }) {
 
           <div className="bottom-container">
             <a
-              href={file.trackViewUrl}
+              href={trackViewUrl || collectionViewUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              auf Apple TV ansehen
+              bei Apple ansehen
             </a>
 
             <button
