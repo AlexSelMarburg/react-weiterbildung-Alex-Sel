@@ -13,6 +13,10 @@ export default function VideoMediaCard({ handleOpenVideoModal, file }) {
 
   const largerArtworkUrl = artworkUrl100?.replace("100x100bb", "600x600bb");
   const title = trackName || collectionCensoredName;
+  const descriptionText = getShortenedString(
+    longDescription || description,
+    90
+  );
 
   return (
     <div className="video-media-card">
@@ -20,10 +24,10 @@ export default function VideoMediaCard({ handleOpenVideoModal, file }) {
       <div className="info-overlay">
         <div className="info">
           <h3>{getShortenedString(title, 24)}</h3>
-          <p className="description">
-            {getShortenedString(longDescription, 125) ||
-              getShortenedString(description, 125)}
-          </p>
+          <p
+            className="description"
+            dangerouslySetInnerHTML={{ __html: descriptionText }}
+          ></p>
         </div>
         <div className="actions">
           <Button text="trailer" onClick={() => handleOpenVideoModal(file)} />

@@ -18,6 +18,11 @@ export default function Modal({ handleCloseVideoModal, file }) {
   } = file;
   console.log(file);
 
+  const descriptionText = getShortenedString(
+    longDescription || description,
+    300
+  );
+
   const modalRoot = document.getElementById("modal-root");
   const jsx = (
     <div className="modal-backdrop" onClick={(e) => handleCloseVideoModal(e)}>
@@ -44,10 +49,10 @@ export default function Modal({ handleCloseVideoModal, file }) {
             </p>
           )}
 
-          <p className="description">
-            {getShortenedString(longDescription, 400) ||
-              getShortenedString(description, 400)}
-          </p>
+          <div
+            className="description"
+            dangerouslySetInnerHTML={{ __html: descriptionText }}
+          ></div>
 
           <div className="bottom-container">
             <a

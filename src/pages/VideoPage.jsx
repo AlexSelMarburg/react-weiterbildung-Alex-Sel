@@ -3,6 +3,7 @@ import "../css/componenets/VideoPage.css";
 import SearchForm from "../components/SearchForm.jsx";
 import {
   getInitialSearchTerm,
+  getInitialType,
   useSearchParams,
 } from "../hooks/useSearchParams.js";
 import { useState } from "react";
@@ -13,7 +14,6 @@ import VideoMediaCard from "../components/VideoMediaCard.jsx";
 
 import Modal from "../components/VideoModal.jsx";
 
-// const typesOfVideMedia = ["movie", "tvShow", "audiobook", "musicVideo"];
 const typesOfVideMedia = {
   movie: "Filme",
   tvShow: "Serien",
@@ -23,7 +23,7 @@ const typesOfVideMedia = {
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
-  const [mediaType, setMediaType] = useState(typesOfVideMedia[0]);
+  const [mediaType, setMediaType] = useState(getInitialType);
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 600);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeVideoFile, setActiveVideoFile] = useState(null);
@@ -43,7 +43,7 @@ export default function Movies() {
     }
   }
 
-  useSearchParams(debouncedSearchTerm);
+  useSearchParams(debouncedSearchTerm, mediaType);
 
   const {
     data: videoFiles = [],
@@ -78,10 +78,13 @@ export default function Movies() {
         <div className="bottom-container">
           {!isPending && !isError && videoFiles.length > 0 && (
             <div className="fetched-data-container">
-              <VideoMediaCard
-                file={videoFiles?.[0]}
-                handleOpenVideoModal={handleOpenVideoModal}
-              />
+              {videoFiles.map((file) => (
+                <VideoMediaCard
+                  key={file.trackId || file.collectionId}
+                  file={file}
+                  handleOpenVideoModal={handleOpenVideoModal}
+                />
+              ))}
             </div>
           )}
         </div>
