@@ -27,7 +27,13 @@ export default function Modal({ handleCloseVideoModal, file }) {
   const jsx = (
     <div className="modal-backdrop" onClick={(e) => handleCloseVideoModal(e)}>
       <div className="modal">
-        <video src={previewUrl} autoPlay controls></video>
+        {previewUrl ? (
+          <video src={previewUrl} autoPlay controls></video>
+        ) : (
+          <div className="no-video">
+            <h2>Kein Video vorhanden!</h2>
+          </div>
+        )}
         <div className="movie-info">
           <h3>
             {trackName || collectionCensoredName}{" "}

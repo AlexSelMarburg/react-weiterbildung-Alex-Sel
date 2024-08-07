@@ -27,7 +27,6 @@ export function Navbar() {
   };
 
   const closeNavigation = () => {
-    // scroll up
     window.scrollTo(0, 0);
     setNavigationOpen(false);
   };
@@ -63,7 +62,7 @@ export function Navbar() {
             onClick={closeNavigation}
             className={(active) => (active ? "active" : "")}
           >
-            Movies
+            Videos
           </Link>
         </li>
       </ul>

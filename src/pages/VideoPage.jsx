@@ -13,12 +13,14 @@ import { fetchITunesDataByMedia } from "../helpers/fetchITunesData.js";
 import VideoMediaCard from "../components/VideoMediaCard.jsx";
 
 import Modal from "../components/VideoModal.jsx";
+import ErrorDisplay from "../components/ErrorDisplay.jsx";
+import { Oval } from "react-loader-spinner";
 
 const typesOfVideMedia = {
   movie: "Filme",
   tvShow: "Serien",
-  audiobook: "Bücher",
   musicVideo: "Musikvideos",
+  audiobook: "Hörbücher",
 };
 
 export default function Movies() {
@@ -64,6 +66,7 @@ export default function Movies() {
       <div id="videos-page" className="page">
         <div className="top-container">
           <SearchForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
           <select
             value={mediaType}
             onChange={(e) => setMediaType(e.target.value)}
@@ -75,7 +78,19 @@ export default function Movies() {
             ))}
           </select>
         </div>
-        <div className="bottom-container">
+
+        <div className={`bottom-container ${isPending ? "loading" : ""}`}>
+          {isError && <ErrorDisplay errorMsg={error.message} />}
+          {isPending && (
+            <Oval
+              visible={true}
+              height="60"
+              width="60"
+              color="#000"
+              strokeWidth={5}
+              ariaLabel="oval-loading"
+            />
+          )}
           {!isPending && !isError && videoFiles.length > 0 && (
             <div className="fetched-data-container">
               {videoFiles.map((file) => (
