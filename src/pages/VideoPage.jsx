@@ -13,7 +13,7 @@ import VideoMediaCard from "../components/VideoMediaCard.jsx";
 
 import Modal from "../components/VideoModal.jsx";
 
-const typesOfVideMedia = ["movie", "tvShow", "audiobook"];
+const typesOfVideMedia = ["movie", "tvShow", "audiobook", "musicVideo"];
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
@@ -28,7 +28,10 @@ export default function Movies() {
   }
 
   function handleCloseVideoModal(e) {
-    if (e.target === e.currentTarget) {
+    if (
+      e.target === e.currentTarget ||
+      e.target.closest("[data-close-modal-btn]")
+    ) {
       setActiveVideoFile(null);
       setIsModalOpen(false);
     }

@@ -1,6 +1,7 @@
 import ReactDOM from "react-dom";
 import "../css/componenets/VideoModal.css";
 import { getShortenedString } from "../helpers/utils.js";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
 export default function Modal({ handleCloseVideoModal, file }) {
   const {
@@ -9,6 +10,9 @@ export default function Modal({ handleCloseVideoModal, file }) {
     releaseDate,
     trackTimeMillis,
     longDescription,
+    description,
+    trackName,
+    collectionCensoredName,
   } = file;
   console.log(file);
 
@@ -16,31 +20,34 @@ export default function Modal({ handleCloseVideoModal, file }) {
   const jsx = (
     <div className="modal-backdrop" onClick={(e) => handleCloseVideoModal(e)}>
       <div className="modal">
-        {/* {children} */}
-
         <video src={previewUrl} autoPlay controls></video>
         <div className="movie-info">
           <h3>
-            {file.trackName}{" "}
+            {trackName || collectionCensoredName}{" "}
             <span>({new Date(releaseDate).getFullYear()})</span>
           </h3>
-          <p>
-            <span className="title">Genre:</span>
-            <span className="value">{primaryGenreName}</span>
-          </p>
+          {primaryGenreName && (
+            <p>
+              <span className="title">Genre:</span>
+              <span className="value">{primaryGenreName}</span>
+            </p>
+          )}
 
-          <p>
-            <span className="title">Dauer:</span>
-            <span className="value">
-              {Math.floor(trackTimeMillis / 1000 / 60) || 0} Min.
-            </span>
-          </p>
+          {trackTimeMillis && (
+            <p>
+              <span className="title">Dauer:</span>
+              <span className="value">
+                {Math.floor(trackTimeMillis / 1000 / 60) || 0} Min.
+              </span>
+            </p>
+          )}
 
           <p className="description">
-            {getShortenedString(longDescription, 400)}
+            {getShortenedString(longDescription, 400) ||
+              getShortenedString(description, 400)}
           </p>
 
-          <div className="apple-tv-link">
+          <div className="bottom-container">
             <a
               href={file.trackViewUrl}
               target="_blank"
@@ -48,6 +55,14 @@ export default function Modal({ handleCloseVideoModal, file }) {
             >
               auf Apple TV ansehen
             </a>
+
+            <button
+              className="close-modal-btn"
+              data-close-modal-btn
+              onClick={(e) => handleCloseVideoModal(e)}
+            >
+              <IoCloseCircleSharp role="button" />
+            </button>
           </div>
         </div>
       </div>
