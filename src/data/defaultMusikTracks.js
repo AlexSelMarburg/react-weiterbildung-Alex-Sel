@@ -1,44 +1,5 @@
 export const defaultMusikTracks = [
   {
-    artistId: 1458080299,
-    artistName: "AP$ENT",
-    artistViewUrl: "https://music.apple.com/us/artist/ap%24ent/1458080299?uo=4",
-    artworkUrl30:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/c0/c7/0fc0c74a-dc6c-0a26-420f-39edc16f4e10/cover.jpg/30x30bb.jpg",
-    artworkUrl60:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/c0/c7/0fc0c74a-dc6c-0a26-420f-39edc16f4e10/cover.jpg/60x60bb.jpg",
-    artworkUrl100:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/0f/c0/c7/0fc0c74a-dc6c-0a26-420f-39edc16f4e10/cover.jpg/100x100bb.jpg",
-    collectionCensoredName: "Можно я с тобой - Single",
-    collectionExplicitness: "notExplicit",
-    collectionId: 1746540727,
-    collectionName: "Можно я с тобой - Single",
-    collectionPrice: 1.29,
-    collectionViewUrl:
-      "https://music.apple.com/us/album/%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE-%D1%8F-%D1%81-%D1%82%D0%BE%D0%B1%D0%BE%D0%B9/1746540727?i=1746540733&uo=4",
-    country: "USA",
-    currency: "USD",
-    discCount: 1,
-    discNumber: 1,
-    isStreamable: true,
-    kind: "song",
-    previewUrl:
-      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b6/3a/e2/b63ae26f-1fd0-9b35-bdd1-011980c59db5/mzaf_5759102126196609043.plus.aac.p.m4a",
-
-    releaseDate: "2022-07-06T12:00:00Z",
-    trackCensoredName: "Можно я с тобой",
-    trackCount: 1,
-    trackExplicitness: "notExplicit",
-    trackId: 1746540733,
-    trackName: "Можно я с тобой",
-    trackNumber: 1,
-    trackPrice: 1.29,
-    trackTimeMillis: 132293,
-    trackViewUrl:
-      "https://music.apple.com/us/album/%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE-%D1%8F-%D1%81-%D1%82%D0%BE%D0%B1%D0%BE%D0%B9/1746540727?i=1746540733&uo=4",
-    wrapperType: "track",
-  },
-  {
     artistId: 325146249,
     artistName: "The Ghostbusters",
     artistViewUrl:
@@ -271,6 +232,82 @@ export const defaultMusikTracks = [
     trackTimeMillis: 307800,
     trackViewUrl:
       "https://music.apple.com/us/album/spitfire/500402694?i=500402701&uo=4",
+    wrapperType: "track",
+  },
+  {
+    artistId: 67103434,
+    artistName: "ZAZ",
+    artistViewUrl: "https://music.apple.com/us/artist/zaz/67103434?uo=4",
+    artworkUrl30:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/61/25/df/6125df84-b295-2378-fb64-9558873caed3/5099964436159.jpg/30x30bb.jpg",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/61/25/df/6125df84-b295-2378-fb64-9558873caed3/5099964436159.jpg/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/61/25/df/6125df84-b295-2378-fb64-9558873caed3/5099964436159.jpg/100x100bb.jpg",
+    collectionCensoredName: "Zaz",
+    collectionExplicitness: "notExplicit",
+    collectionId: 693461248,
+    collectionName: "Zaz",
+    collectionViewUrl:
+      "https://music.apple.com/us/album/je-veux/693461248?i=693461512&uo=4",
+    country: "USA",
+    currency: "USD",
+    discCount: 1,
+    discNumber: 1,
+    isStreamable: true,
+    kind: "song",
+    previewUrl:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/90/30/ed/9030edfe-09e8-462f-dc6b-eaf48066ada0/mzaf_1690224067867305461.plus.aac.p.m4a",
+    primaryGenreName: "French Pop",
+    releaseDate: "2010-02-22T12:00:00Z",
+    trackCensoredName: "Je veux",
+    trackCount: 11,
+    trackExplicitness: "notExplicit",
+    trackId: 693461512,
+    trackName: "Je veux",
+    trackNumber: 2,
+    trackTimeMillis: 215933,
+    trackViewUrl:
+      "https://music.apple.com/us/album/je-veux/693461248?i=693461512&uo=4",
+    wrapperType: "track",
+  },
+  {
+    artistId: 251582975,
+    artistName: "5'nizza",
+    artistViewUrl: "https://music.apple.com/us/artist/5nizza/251582975?uo=4",
+    artworkUrl30:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/07/df/6507dfce-ca4f-254e-3eae-6fc2ad4e255b/5nizza.jpg/30x30bb.jpg",
+    artworkUrl60:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/07/df/6507dfce-ca4f-254e-3eae-6fc2ad4e255b/5nizza.jpg/60x60bb.jpg",
+    artworkUrl100:
+      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/07/df/6507dfce-ca4f-254e-3eae-6fc2ad4e255b/5nizza.jpg/100x100bb.jpg",
+    collectionCensoredName: "Пятница",
+    collectionExplicitness: "notExplicit",
+    collectionId: 994724217,
+    collectionName: "Пятница",
+    collectionPrice: 9.99,
+    collectionViewUrl:
+      "https://music.apple.com/us/album/%D1%81%D0%BE%D0%BB%D0%B4%D0%B0%D1%82/994724217?i=994724534&uo=4",
+    country: "USA",
+    currency: "USD",
+    discCount: 1,
+    discNumber: 1,
+    isStreamable: true,
+    kind: "song",
+    previewUrl:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/32/57/ba/3257ba17-ccfa-8a2f-86c5-2a3a57675d9f/mzaf_629854771977751634.plus.aac.p.m4a",
+    primaryGenreName: "Reggae",
+    releaseDate: "2003-01-01T12:00:00Z",
+    trackCensoredName: "Солдат",
+    trackCount: 19,
+    trackExplicitness: "notExplicit",
+    trackId: 994724534,
+    trackName: "Солдат",
+    trackNumber: 14,
+    trackPrice: 0.99,
+    trackTimeMillis: 190013,
+    trackViewUrl:
+      "https://music.apple.com/us/album/%D1%81%D0%BE%D0%BB%D0%B4%D0%B0%D1%82/994724217?i=994724534&uo=4",
     wrapperType: "track",
   },
 ];

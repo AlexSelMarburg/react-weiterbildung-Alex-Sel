@@ -1,5 +1,4 @@
 .video-media-card {
-  /* max-width: 14rem; */
   width: 100%;
   aspect-ratio: 1 / 1.5;
   background-color: var(--secondary-bg-color);
@@ -28,7 +27,7 @@
     bottom: -100%;
     left: 0;
 
-    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    border-top: 2px solid rgba(0, 0, 0, 0.7);
     background-color: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(7px);
     display: flex;
