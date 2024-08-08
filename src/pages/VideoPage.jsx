@@ -25,8 +25,8 @@ const typesOfVideMedia = {
 
 export default function Movies() {
   const [searchTerm, setSearchTerm] = useState(getInitialSearchTerm);
-  const [mediaType, setMediaType] = useState(getInitialType);
   const debouncedSearchTerm = useDebouncedValue(searchTerm, 600);
+  const [mediaType, setMediaType] = useState(getInitialType);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeVideoFile, setActiveVideoFile] = useState(null);
 

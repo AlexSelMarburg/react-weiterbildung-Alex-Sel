@@ -5,6 +5,8 @@
   padding: 0;
   padding-top: calc(var(--navbar-height) + 10px);
   background-color: var(--main-bg-color);
+
+  background-image: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
 }
 
 @keyframes pulse-background {
