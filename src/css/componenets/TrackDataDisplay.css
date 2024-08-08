@@ -8,10 +8,8 @@
   letter-spacing: 1px;
   font-size: var(--big-font-size);
   min-height: 10rem;
-  /* background-color: var(--main-bg-color); */
   background-color: var(--accent-color-dark-2);
-
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   &.pending {
@@ -26,5 +24,9 @@
   .value {
     font-weight: 400;
     color: var(--secondary-text-color);
+  }
+
+  a {
+    border-radius: inherit;
   }
 }

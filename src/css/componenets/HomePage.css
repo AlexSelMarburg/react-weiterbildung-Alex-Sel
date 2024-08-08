@@ -46,7 +46,7 @@
       text-shadow: 1px 1px 2px var(--accent-color-dark-1);
       color: var(--accent-text-color-3);
       font-weight: 500;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.7rem;
       line-height: 1.05;
 
       span {
@@ -79,6 +79,8 @@
 
     img {
       width: 100%;
+      -webkit-filter: drop-shadow(5px 5px 5px #222);
+      filter: drop-shadow(5px 5px 5px #222);
     }
   }
 }
