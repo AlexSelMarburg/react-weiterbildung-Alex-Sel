@@ -92,31 +92,32 @@ export default function Movies() {
             />
           )}
 
-          {!isPending && !isError && debouncedSearchTerm.length < 2 && (
-            <div className="no-results">
-              <p>Bitte Suchbegriff eingeben</p>
-            </div>
-          )}
+          {!isPending && !isError && (
+            <>
+              {debouncedSearchTerm.length < 2 && (
+                <div className="no-results">
+                  <p>Bitte Suchbegriff eingeben</p>
+                </div>
+              )}
 
-          {!isPending &&
-            !isError &&
-            videoFiles.length === 0 &&
-            debouncedSearchTerm.length >= 2 && (
-              <div className="no-results">
-                <p>Keine Ergebnisse gefunden...</p>
-              </div>
-            )}
+              {videoFiles.length === 0 && debouncedSearchTerm.length >= 2 && (
+                <div className="no-results">
+                  <p>Keine Ergebnisse gefunden...</p>
+                </div>
+              )}
 
-          {!isPending && !isError && videoFiles.length > 0 && (
-            <div className="fetched-data-container">
-              {videoFiles.map((file) => (
-                <VideoMediaCard
-                  key={file.trackId || file.collectionId}
-                  file={file}
-                  handleOpenVideoModal={handleOpenVideoModal}
-                />
-              ))}
-            </div>
+              {videoFiles.length > 0 && (
+                <div className="fetched-data-container">
+                  {videoFiles.map((file) => (
+                    <VideoMediaCard
+                      key={file.trackId || file.collectionId}
+                      file={file}
+                      handleOpenVideoModal={handleOpenVideoModal}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
