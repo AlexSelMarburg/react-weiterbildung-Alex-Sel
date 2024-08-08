@@ -21,7 +21,8 @@ export default function WebsiteWrapper({ children }) {
   return (
     <div id="website-wrapper">
       {children}
-      {showScrollTopBtn && <ScrollTopButton />}
+      {/* {showScrollTopBtn && <ScrollTopButton show={showScrollTopBtn} />} */}
+      <ScrollTopButton show={showScrollTopBtn} />
     </div>
   );
 }

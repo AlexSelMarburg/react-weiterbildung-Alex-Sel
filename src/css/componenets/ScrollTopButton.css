@@ -1,6 +1,6 @@
 #scroll-top-button {
   position: fixed;
-  bottom: 25px;
+  bottom: 0px;
   right: calc(50% - 25px);
   width: 60px;
   height: 60px;
@@ -15,7 +15,14 @@
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  transition: all 0.2s ease;
+  transition: transform 0.25s ease-in;
+  transform: translateY(100%);
+
+  &.show {
+    bottom: 1rem;
+    transform: translateY(0);
+    transition: transform 0.25s ease-out;
+  }
 
   &:hover {
     cursor: pointer;

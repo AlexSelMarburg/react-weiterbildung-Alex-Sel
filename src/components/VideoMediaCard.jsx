@@ -30,7 +30,11 @@ export default function VideoMediaCard({ handleOpenVideoModal, file }) {
           ></p>
         </div>
         <div className="actions">
-          <Button text="trailer" onClick={() => handleOpenVideoModal(file)} />
+          <Button
+            isInverted={true}
+            text="zum trailer"
+            onClick={() => handleOpenVideoModal(file)}
+          />
         </div>
       </div>
     </div>

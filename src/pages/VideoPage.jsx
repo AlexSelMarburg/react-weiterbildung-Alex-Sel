@@ -11,11 +11,11 @@ import { useDebouncedValue } from "../hooks/useDebouncedValue.js";
 import { useQuery } from "@tanstack/react-query";
 import { fetchITunesDataByMedia } from "../helpers/fetchITunesData.js";
 import VideoMediaCard from "../components/VideoMediaCard.jsx";
-
 import Modal from "../components/VideoModal.jsx";
 import ErrorDisplay from "../components/ErrorDisplay.jsx";
 import { Oval } from "react-loader-spinner";
 
+// Define media types with their display names
 const typesOfVideMedia = {
   movie: "Filme",
   tvShow: "Serien",
@@ -30,12 +30,12 @@ export default function Movies() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeVideoFile, setActiveVideoFile] = useState(null);
 
-  function handleOpenVideoModal(file) {
+  const handleOpenVideoModal = (file) => {
     setActiveVideoFile(file);
     setIsModalOpen(true);
-  }
+  };
 
-  function handleCloseVideoModal(e) {
+  const handleCloseVideoModal = (e) => {
     if (
       e.target === e.currentTarget ||
       e.target.closest("[data-close-modal-btn]")
@@ -43,13 +43,13 @@ export default function Movies() {
       setActiveVideoFile(null);
       setIsModalOpen(false);
     }
-  }
+  };
 
   useSearchParams(debouncedSearchTerm, mediaType);
 
   const {
     data: videoFiles = [],
-    isPending = true,
+    isPending,
     isError,
     error,
   } = useQuery({
@@ -66,7 +66,6 @@ export default function Movies() {
       <div id="videos-page" className="page">
         <div className="top-container">
           <SearchForm searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
           <select
             value={mediaType}
             onChange={(e) => setMediaType(e.target.value)}
@@ -81,6 +80,7 @@ export default function Movies() {
 
         <div className={`bottom-container ${isPending ? "loading" : ""}`}>
           {isError && <ErrorDisplay errorMsg={error.message} />}
+
           {isPending && (
             <Oval
               visible={true}
@@ -91,6 +91,22 @@ export default function Movies() {
               ariaLabel="oval-loading"
             />
           )}
+
+          {!isPending && !isError && debouncedSearchTerm.length < 2 && (
+            <div className="no-results">
+              <p>Bitte Suchbegriff eingeben</p>
+            </div>
+          )}
+
+          {!isPending &&
+            !isError &&
+            videoFiles.length === 0 &&
+            debouncedSearchTerm.length >= 2 && (
+              <div className="no-results">
+                <p>Keine Ergebnisse gefunden...</p>
+              </div>
+            )}
+
           {!isPending && !isError && videoFiles.length > 0 && (
             <div className="fetched-data-container">
               {videoFiles.map((file) => (
@@ -119,8 +135,7 @@ export default function Movies() {
 }
 
 async function fetchVideo({ queryKey }) {
-  const searchTerm = queryKey[1];
-  const type = queryKey[2];
+  const [, searchTerm, type] = queryKey;
 
   if (searchTerm.length < 2) {
     return [];
