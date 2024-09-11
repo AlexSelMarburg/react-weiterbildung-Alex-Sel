@@ -1,45 +1,5 @@
 export const defaultMusikTracks = [
   {
-    artistId: 325146249,
-    artistName: "The Ghostbusters",
-    artistViewUrl:
-      "https://music.apple.com/us/artist/the-ghostbusters/325146249?uo=4",
-    artworkUrl30:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music60/v4/26/89/93/268993e4-a3fc-a2e7-8af7-3e3f536816e2/cover.jpg/30x30bb.jpg",
-    artworkUrl60:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music60/v4/26/89/93/268993e4-a3fc-a2e7-8af7-3e3f536816e2/cover.jpg/60x60bb.jpg",
-    artworkUrl100:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music60/v4/26/89/93/268993e4-a3fc-a2e7-8af7-3e3f536816e2/cover.jpg/100x100bb.jpg",
-    collectionCensoredName: "Север помнит! - Single",
-    collectionExplicitness: "notExplicit",
-    collectionId: 1133918241,
-    collectionName: "Север помнит! - Single",
-    collectionPrice: 1.29,
-    collectionViewUrl:
-      "https://music.apple.com/us/album/%D1%81%D0%B5%D0%B2%D0%B5%D1%80-%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82/1133918241?i=1133918321&uo=4",
-    country: "USA",
-    currency: "USD",
-    discCount: 1,
-    discNumber: 1,
-    isStreamable: true,
-    kind: "song",
-    previewUrl:
-      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6b/16/8f/6b168ff8-2d21-0428-8af4-61880c89c59d/mzaf_9691306051405952641.plus.aac.p.m4a",
-    primaryGenreName: "Rock",
-    releaseDate: "2015-09-22T12:00:00Z",
-    trackCensoredName: "Север помнит!",
-    trackCount: 1,
-    trackExplicitness: "notExplicit",
-    trackId: 1133918321,
-    trackName: "Север помнит!",
-    trackNumber: 1,
-    trackPrice: 1.29,
-    trackTimeMillis: 177173,
-    trackViewUrl:
-      "https://music.apple.com/us/album/%D1%81%D0%B5%D0%B2%D0%B5%D1%80-%D0%BF%D0%BE%D0%BC%D0%BD%D0%B8%D1%82/1133918241?i=1133918321&uo=4",
-    wrapperType: "track",
-  },
-  {
     artistId: 365001429,
     artistName: "Indila",
     artistViewUrl: "https://music.apple.com/us/artist/indila/365001429?uo=4",
@@ -157,45 +117,6 @@ export const defaultMusikTracks = [
     wrapperType: "track",
   },
   {
-    artistId: 646139967,
-    artistName: "Aria",
-    artistViewUrl: "https://music.apple.com/us/artist/aria/646139967?uo=4",
-    artworkUrl30:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3c/14/f5/3c14f534-35fd-c633-0104-db20a355ce21/cover.jpg/30x30bb.jpg",
-    artworkUrl60:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3c/14/f5/3c14f534-35fd-c633-0104-db20a355ce21/cover.jpg/60x60bb.jpg",
-    artworkUrl100:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/3c/14/f5/3c14f534-35fd-c633-0104-db20a355ce21/cover.jpg/100x100bb.jpg",
-    collectionCensoredName: "С кем ты?",
-    collectionExplicitness: "notExplicit",
-    collectionId: 819701693,
-    collectionName: "С кем ты?",
-    collectionPrice: 7.99,
-    collectionViewUrl:
-      "https://music.apple.com/us/album/%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D1%8C-%D1%81%D1%82%D1%80%D0%B0%D1%85-%D0%BF%D1%80%D0%B5%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9/819701693?i=819701706&uo=4",
-    country: "USA",
-    currency: "USD",
-    discCount: 1,
-    discNumber: 1,
-    isStreamable: true,
-    kind: "song",
-    previewUrl:
-      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/b0/25/9f/b0259ff6-2c25-810f-7df0-0193f0ad4ed2/mzaf_7045037724086450705.plus.aac.p.m4a",
-    primaryGenreName: "Metal",
-    releaseDate: "1986-01-01T12:00:00Z",
-    trackCensoredName: "Встань, страх преодолей",
-    trackCount: 8,
-    trackExplicitness: "notExplicit",
-    trackId: 819701706,
-    trackName: "Встань, страх преодолей",
-    trackNumber: 2,
-    trackPrice: 1.29,
-    trackTimeMillis: 256133,
-    trackViewUrl:
-      "https://music.apple.com/us/album/%D0%B2%D1%81%D1%82%D0%B0%D0%BD%D1%8C-%D1%81%D1%82%D1%80%D0%B0%D1%85-%D0%BF%D1%80%D0%B5%D0%BE%D0%B4%D0%BE%D0%BB%D0%B5%D0%B9/819701693?i=819701706&uo=4",
-    wrapperType: "track",
-  },
-  {
     artistId: 1093102,
     artistName: "The Prodigy",
     artistViewUrl: "https://music.apple.com/us/artist/the-prodigy/1093102?uo=4",
@@ -269,45 +190,6 @@ export const defaultMusikTracks = [
     trackTimeMillis: 215933,
     trackViewUrl:
       "https://music.apple.com/us/album/je-veux/693461248?i=693461512&uo=4",
-    wrapperType: "track",
-  },
-  {
-    artistId: 251582975,
-    artistName: "5'nizza",
-    artistViewUrl: "https://music.apple.com/us/artist/5nizza/251582975?uo=4",
-    artworkUrl30:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/07/df/6507dfce-ca4f-254e-3eae-6fc2ad4e255b/5nizza.jpg/30x30bb.jpg",
-    artworkUrl60:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/07/df/6507dfce-ca4f-254e-3eae-6fc2ad4e255b/5nizza.jpg/60x60bb.jpg",
-    artworkUrl100:
-      "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/65/07/df/6507dfce-ca4f-254e-3eae-6fc2ad4e255b/5nizza.jpg/100x100bb.jpg",
-    collectionCensoredName: "Пятница",
-    collectionExplicitness: "notExplicit",
-    collectionId: 994724217,
-    collectionName: "Пятница",
-    collectionPrice: 9.99,
-    collectionViewUrl:
-      "https://music.apple.com/us/album/%D1%81%D0%BE%D0%BB%D0%B4%D0%B0%D1%82/994724217?i=994724534&uo=4",
-    country: "USA",
-    currency: "USD",
-    discCount: 1,
-    discNumber: 1,
-    isStreamable: true,
-    kind: "song",
-    previewUrl:
-      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/32/57/ba/3257ba17-ccfa-8a2f-86c5-2a3a57675d9f/mzaf_629854771977751634.plus.aac.p.m4a",
-    primaryGenreName: "Reggae",
-    releaseDate: "2003-01-01T12:00:00Z",
-    trackCensoredName: "Солдат",
-    trackCount: 19,
-    trackExplicitness: "notExplicit",
-    trackId: 994724534,
-    trackName: "Солдат",
-    trackNumber: 14,
-    trackPrice: 0.99,
-    trackTimeMillis: 190013,
-    trackViewUrl:
-      "https://music.apple.com/us/album/%D1%81%D0%BE%D0%BB%D0%B4%D0%B0%D1%82/994724217?i=994724534&uo=4",
     wrapperType: "track",
   },
 ];
